@@ -1,12 +1,15 @@
 import React from "react";
-import store from "./store/index";
 import { Provider } from "react-redux";
-import TodoList from "./TodoList";
+import store from "./store";
+import Index from "./pages/index";
 
-const App = () => (
-  <Provider store={store}>
-    <TodoList />
-  </Provider>
-);
+const App = () => {
+  return (
+    // 注入全局 redux state: 所有组件都可以访问
+    <Provider store={store}>
+      <Index />
+    </Provider>
+  );
+};
 
 export default App;
